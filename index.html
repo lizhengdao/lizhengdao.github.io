@@ -5,6 +5,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
     <!-- shrink-to-fit=no 兼容IOS9-->
+	
+	<style type='text/css'>body{font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
 
     <title>Title</title>
 
@@ -14,9 +16,16 @@
     <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+	<script type='text/javascript' src='https://cn.bing.com/api/maps/mapcontrol?key=Au6253EDuxHklD98a7oBlQD5QvJKjXYqtDrDXWvzSf5TQDjtJHxfx8TfjRGxXD5d'></script>
+    <script type='text/javascript'>
+        var map;
+        function loadMapScenario() {
+            map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
+        }
+	</script>
 </head>
 
-<body>
+<body onload='loadMapScenario();'>
 
     <!-- 搭建页面头部 -->
     <header>
@@ -60,8 +69,14 @@
 
     <!-- 页面主体 -->
     <main>
+	
+	    <div id='printoutPanel'></div>
+
+        <div id='myMap' style='width: 100vw; height: 100vh;'></div>
 
     </main>
+	
+	
 
     <!-- 页面底部 -->
     <footer>
